@@ -1,6 +1,6 @@
 # Semester-4
 ### 2019-Batch
-# All Materials of the 4nd Semester of **IIITS**
+# All Materials of the 4th Semester of **IIITS**
 * Courses Included
 **AI**
 **ML**
