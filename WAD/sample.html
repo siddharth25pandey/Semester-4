@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- Start HTML here -->
+<html>
+<!-- Start HEAD here -->
+<head>
+<title>WAD Course</title>
+<link href="a.css" rel="stylesheet">
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body style="background-color:#ae6cbb;">
+<center>
+
+<div class="as">
+<p>Welcome to JS and CSS Tutorial</p>
+<b><p id="multi"></p></b>
+<b><h1 id="muls"></h1></b>
+<b><p id="subobj"></p></b>
+<b><h1 id="darr"></h1></b>
+</div>
+
+<h1 id="cgc">UG2 IIIT Sri City</h1>
+<button type="button" onclick='document.getElementById("cgc").innerHTML = "Welcome to ASE Track"'>CHANGE</button>
+<button type="button" onclick="myFunct()">RESET</button>
+
+
+<p id="dayhr"></p>
+
+<button type="button" onclick="myFuncts()">CHECK</button>
+<p id="bol"></p>
+<p>Enter your Phone Number</p>
+
+<form>
+<input id="phone">
+<button onclick="chkph(document.getElementById('phone'))">Check</button>
+</form>
+
+
+<!---Table Starts Here ----------------------->
+
+    
+<table><tbody id="empTable" contenteditable>
+  <tr>
+    <td rowspan="2"><b>Title of Project</b></td>
+    <td rowspan="2"><b>Sponsoring Agency</b></td>
+    <td colspan="2"><b><center>Period</center></b></td>
+    <td rowspan="2"><b><center>Duration in Years</center></b></td>
+    <td rowspan="2"><b>Project Sanctioned Amount in INR</b></td>
+    <td rowspan="2"><b><center>Status (Completed / Ongoing)</center></b></td>
+    <td rowspan="2"><b>PI/Co - PI</b></td>
+    <td rowspan="2"><b>No. of Co-PIs including PI</b></td>
+  </tr>
+  <tr>
+    <td><b><center>From</center></b></td>
+    <td><b><center>To</center></b></td>
+  </tr>
+
+  <tr>
+    <td><input name="empTable1" id="empTable1" type="text" value=""/></td>
+    <td><input name="empTable2" id="empTable2" type="text" value=""/></td>
+    <td><input name="empTable3" id="empTable3" type="text" value=""/></td>
+    <td><input name="empTable4" id="empTable4" type="text" value=""/></td>
+    <td><input name="empTable5" id="empTable5" type="text" value=""/></td>
+    <td><input name="empTable6" id="empTable6" type="text" value=""/></td>
+    <td><input name="empTable7" id="empTable7" type="text" value=""/></td>
+    <td><input name="empTable8" id="empTable8" type="text" value=""/></td>
+    <td><input name="empTable9" id="empTable9" type="text" value=""/></td>
+  </tr>
+</thbody></table>
+        <input type="button" value="Add New Row" onclick="addRo('empTable')" />
+	<input type="button" value="Remove Last One" onclick="deleterow('empTable')"/>
+
+
+<script>
+
+
+//-----------Table Add Row and Delete-------
+var c = 0;
+    function addRo(tblId) {
+        var empTab = document.getElementById(tblId);
+	var rowCnt = empTab.rows.length;        // GET TABLE ROW COUNT.
+        var tr = empTab.insertRow(rowCnt);      // TABLE ROW.
+	
+        for (var c = 0; c < 9; c++) {
+            var td = document.createElement('td');          // TABLE DEFINITION.
+            td = tr.insertCell(c);
+                var ele = document.createElement('input');
+
+                td.appendChild(ele);            
+        }
+			
+    }
+
+
+
+    function deleterow(tblId)
+    {
+      var table = document.getElementById(tblId);
+      var row = table.getElementsByTagName('tr');
+	var rowCountt = table.rows.length;
+	
+      		if(row.length!='3'){
+
+					table.deleteRow(rowCountt-1);  
+            			}
+    }
+
+//------------------
+
+
+
+
+//-----------------------------Regular Expression
+
+var re = /(?:\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
+function chkph(phoneInput) {
+  var OK = re.exec(phoneInput.value);
+  if (!OK) {
+    alert(phoneInput.value + ' isn\'t a phone number with area code!');
+  } else {
+    alert('Thanks, your phone number is ' + OK[0]);
+  }
+}
+
+
+
+
+//-------------------------------Boolean---------------------
+
+function myFuncts(){
+	document.getElementById("bol").innerHTML =Boolean(10<9);
+
+}
+
+//----------------
+var x = 10;
+var y = 5;
+var z = x*y;
+document.getElementById("multi").innerHTML = "The output is " +z;
+
+//----------------------using Function---------------------------
+function Mulsv(x, y){
+ return x*y;
+}
+document.getElementById("muls").innerHTML = "The result is " +Mulsv(12,5);
+
+//------------------Objects---------------------------
+var subj = {subn:"WAD", sem:"Fourth", dept:"CSE"};
+document.getElementById("subobj").innerHTML = "ASE Track start with " +subj.subn +" in " +subj.sem +" semsester of " +subj.dept;
+//------------------Array----------
+var aset = ["WAD", "SOAD", "EAD"];
+var tos = ["Fourth", "Fifth", "Six"]
+var naset = aset.concat(tos);
+document.getElementById("darr").innerHTML = naset;
+//------------------------Change Content-----------------------------------------------
+
+function myFunct(){
+	var str = "IIIT Sri City";
+	var result = str.link("http://www.iiits.ac.in/");
+ document.getElementById("cgc").innerHTML = "UG2 " + result;
+ 
+}
+
+
+if (new Date().getHours() < 10){
+				document.getElementById("dayhr").innerHTML = "Good Morning";	
+}
+else if (new Date().getHours() < 17){
+				document.getElementById("dayhr").innerHTML = "Good Afternoon";	
+}
+else if (new Date().getHours() < 20){
+				document.getElementById("dayhr").innerHTML = "Good Evening";	
+}
+
+else {
+				document.getElementById("dayhr").innerHTML = "Good Night";	
+}
+
+
+
+</script>
+
+
+<h1>UG2 <a href="http://www.iiits.ac.in/" target="_blank">IIIT Sri City</a></h1>
+
+
+<h2>UG2 IIIT Sri City</h2>
+
+
+<h2>ASE-WAD Course</h2>
+<h3>UG2 IIIT Sri City</h3>
+<h4>UG2 IIIT Sri City</h4>
+UG2 IIIT Sri City
+<hr>
+<p><b>Welcome to <i>WAD</i> course of <mark>ASE</mark> Track</b></p>
+<img src="http://www.iiits.ac.in/iiits-content/uploads/2020/05/new-banner3-1536x644.jpg" width="920" height="350">
+<hr>
+<p> <b>Elements:</b> h1, h2, h3, p ......</p>
+<p> <b>Attributes:</b> href, src....</p>
+<hr>
+<strong> Important <sub>Stuff</sub> IIIT <sup>SriCity</sup> </strong><br>
+<del> Important Stuff </del>
+<hr>
+</center>
+<h2>vdscd</h2>
+<!-- Start Table here -->
+<center>
+<table>
+	<tr>
+	 	<th>Group ID</th>
+	 	<th>Name 1</th>
+	 	<th>Name 2</th>
+	 	<th>Name 3</th>
+	 	<th>Name 4</th>
+	 	<th>Name 5</th>
+	</tr>
+	<tr>
+	 	<td>WAD-1</td>
+	 	<td>Naveen</td>
+	 	<td>Sampath</td>
+	 	<td>Indu</td>
+	 	<td>Romy</td>
+	 	<td>Savin</td>
+	</tr>
+	<tr>
+	 	<td>WAD-2</td>
+	 	<td>Nomi</td>
+	 	<td>Amit</td>
+	 	<td>Indu</td>
+	 	<td>Romy</td>
+	 	<td>Savin</td>
+	</tr>
+</table>
+</center>
+<hr>
+<!-- Start List here -->
+<ul>
+<li>This is one</li>
+<li>This is second</li>
+<li>This is third</li>
+</ul>
+
+<hr>
+<center>
+<iframe src="http://www.iiits.ac.in/" height="300" width="720"></iframe>
+</center>
+<hr>
+<img src="http://www.iiits.ac.in/iiits-content/uploads/2020/05/uba12.jpeg" width="720" height="350" usemap="#iiits">
+
+<map name="iiits">
+<area shape="rect" coords="1,1,240,340" href="http://www.iiits.ac.in/">
+
+<area shape="rect" coords="300,100,700,340" href="https://www.entrepreneur.com/magazine">
+
+</map>
+
+
+
+<!-------------------------------R&D starts---------------------------------------------------------->
+
+<h3>External Sponsored R&D Projects Details</h3>
+
+<!--------------------------------------Experiment Table starts-------------------------------------------->
+
+
+    
+<table><tbody id="empTable" contenteditable>
+  <tr>
+    <td rowspan="2"><b>Title of Project</b></td>
+    <td rowspan="2"><b>Sponsoring Agency</b></td>
+    <td colspan="2"><b><center>Period</center></b></td>
+    <td rowspan="2"><b><center>Duration in Years</center></b></td>
+    <td rowspan="2"><b>Project Sanctioned Amount in INR</b></td>
+    <td rowspan="2"><b><center>Status (Completed / Ongoing)</center></b></td>
+    <td rowspan="2"><b>PI/Co - PI</b></td>
+    <td rowspan="2"><b>No. of Co-PIs including PI</b></td>
+  </tr>
+  <tr>
+    <td><b><center>From</center></b></td>
+    <td><b><center>To</center></b></td>
+  </tr>
+
+  <tr>
+    <td><input name="empTable1" id="empTable1" type="text" value=""/></td>
+    <td><input name="empTable2" id="empTable2" type="text" value=""/></td>
+    <td><input name="empTable3" id="empTable3" type="text" value=""/></td>
+    <td><input name="empTable4" id="empTable4" type="text" value=""/></td>
+    <td><input name="empTable5" id="empTable5" type="text" value=""/></td>
+    <td><input name="empTable6" id="empTable6" type="text" value=""/></td>
+    <td><input name="empTable7" id="empTable7" type="text" value=""/></td>
+    <td><input name="empTable8" id="empTable8" type="text" value=""/></td>
+    <td><input name="empTable9" id="empTable9" type="text" value=""/></td>
+  </tr>
+</thbody></table>
+        <input type="button" value="Add New Row" onclick="addRo('empTable')" />
+	<input type="button" value="Remove Last One" onclick="deleterow('empTable')"/>
+<!----------------------------------------Experiment Table Ends----------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

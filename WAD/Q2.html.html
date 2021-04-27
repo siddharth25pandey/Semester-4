@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Siddharth Pandey , IIIT Sri City, Indian Institute of Information Technology, Sri City, Full Stack Developer,Data Science, Student, Research, Software Engineering, Internship, SOftware Engineering Internship" />
+    <meta name="description" content="Tutorial-1" />
+    <link rel="stylesheet" href="style.css">
+    <title>Siddharth Pandey (S20190010163)</title>
+
+
+</head>
+
+<body>
+    </head>
+
+    <body>
+        <center>
+            <div class="sid">
+                <h1><strong>SIDDHARTH PANDEY</strong></h1>
+
+                <h2><strong><u>S20190010163</u></strong></h2>
+            </div>
+            
+            <div class="but">
+            <h1 >Ques 2 (d)</h1>
+                <h1 id="cgc">Project Name</h1>
+                <button type="info" class="button button1" onclick='document.getElementById("cgc").innerHTML = "ML Engineer at Omdena"'>Button 1</button>
+                <button type="danger" class="button button1" onclick='document.getElementById("cgc").innerHTML = "Data Science Intern at Numyard"'>Button 2</button>
+                
+
+
+            </div>
+           
+
+            <div class="sid">
+                <table>
+                    <tbody id="empTable" contenteditable>
+                        <h3><u>Table Ques 2 (c)</u></h3>
+                        
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll No</th>
+                            <th>Hostel Room No</th>
+                            <th>Enrollement Year</th>
+                            <th>Graduation Year</th>
+                            <th>Permanent Address</th>
+                            <th>Father Name</th>
+                            <th>Project/Internship /Certificate done</th>
+                        </tr>
+                        <tr>
+                            <td>Siddharth Pandey</td>
+                            <td>S20190010163</td>
+                            <td>107</td>
+                            <td>2019</td>
+                            <td>2023</td>
+                            <td>Patna</td>
+                            <td>NM Pandey</td>
+                            <td>Yes</td>
+                        </tr>
+                         <tr>
+                            <td>ABC</td>
+                            <td>S20190010XYZ</td>
+                            <td>pqr</td>
+                            <td>2019</td>
+                            <td>2023</td>
+                            <td>Delhi</td>
+                            <td>GHI</td>
+                            <td>Yes</td>
+                        </tr>
+                       <td>Mohan</td>
+                            <td>S20190010pqr</td>
+                            <td>100</td>
+                            <td>2019</td>
+                            <td>2023</td>
+                            <td>Mumbai</td>
+                            <td>Sohan</td>
+                            <td>No</td>
+                    </tbody>
+                </table>
+                <input type="button" value="Add New Row" onclick="addRo('empTable')" />
+                <input type="button" value="Remove Last One" onclick="deleterow('empTable')" />
+
+            </div>
+            <br>
+
+            <img src="http://www.iiits.ac.in/iiits-content/uploads/2020/12/Banner-1.png" style="width:920px;height:408px;" usemap="#iiits" alt="Hey there!">
+            <map name="#iiits">
+                    <area shape="rect" coords="1,1,240,340" href="http://www.iiits.ac.in/">
+        
+                    <area shape="rect" coords="300,100,700,340" href="https://siddharth25pandey.github.io/">
+                    <area shape="rect" coords="300,200,600,100" href="https://github.com/siddharth25pandey">
+                    <area shape="rect" coords="300,200,800,400" href="https://www.linkedin.com/in/siddharth25pandey/">
+        
+                </map>
+
+        </center>
+    </body>
+    <script>
+        var name = "Siddharth";
+        var roll = "S20190010163";
+        alert("Welcome to Mid Exam of WAD: Designed & Developed by " +name+" "+roll);
+       
+
+        function addRo(tblId) {
+            var empTab = document.getElementById(tblId);
+            var rowCnt = empTab.rows.length; // GET TABLE ROW COUNT.
+            var tr = empTab.insertRow(rowCnt); // TABLE ROW.
+
+            for (var c = 0; c < 4; c++) {
+                var td = document.createElement('td'); // TABLE DEFINITION.
+                td = tr.insertCell(c);
+                var ele = document.createElement('input');
+
+                td.appendChild(ele);
+            }
+
+        }
+
+
+
+        function deleterow(tblId) {
+            var table = document.getElementById(tblId);
+            var row = table.getElementsByTagName('tr');
+            var rowCountt = table.rows.length;
+
+            if (row.length != '3') {
+
+                table.deleteRow(rowCountt - 1);
+            }
+        }
+    </script>
+
+</html>

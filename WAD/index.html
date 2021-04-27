@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Siddharth Pandey , IIIT Sri City, Indian Institute of Information Technology, Sri City, Full Stack Developer,Data Science, Student, Research, Software Engineering, Internship, SOftware Engineering Internship" />
+    <meta name="description" content="Tutorial-1" />
+    <link rel="stylesheet" href="style.css">
+    <title>Siddharth Pandey (S20190010163)</title>
+
+
+</head>
+
+<body>
+    </head>
+
+    <body>
+        <center>
+            <div class="sid">
+                <h1><strong>SIDDHARTH PANDEY</strong></h1>
+
+                <h2><strong><u>GROUP-20</u></strong></h2>
+            </div>
+            <br>
+            <br>
+            <img src="https://sid293571351.files.wordpress.com/2020/05/cropped-sidblog-logo.png" style="width:920px;height:408px;" alt="Blog Logo">
+            <br>
+            <br>
+            <br>
+            <div class="but">
+                <h1 id="cgc">Group Members</h1>
+                <button type="info" class="button button1" onclick='document.getElementById("cgc").innerHTML = "Siddharth Pandey"'>Developer-1</button>
+                <button type="danger" class="button button1" onclick='document.getElementById("cgc").innerHTML = "Priyam Bajpai (Leader)"'>Developer-2</button>
+                <button type="info" class="button button1" onclick='document.getElementById("cgc").innerHTML = "Sheyash Mishra"'>Developer-3</button>
+                <button type="danger" class="button button1" onclick='document.getElementById("cgc").innerHTML = "Yaduraj Swapnil Deshmukh"'>Developer-4</button>
+                <button type="info" class="button button1" onclick='document.getElementById("cgc").innerHTML = "Naveen Kumar Vula"'>Developer-5</button>
+
+
+            </div>
+            <div class="but">
+                <h2 id="subobj"></h2>
+                <h2 id="subarray"></h2>
+
+            </div>
+
+            <div class="sid">
+                <table>
+                    <tbody id="empTable" contenteditable>
+                        <h3><u>GROUP-20</u></h3>
+                        <h3>Topic: Hospital Management System</h3>
+                        <tr>
+                            <th>Developer Name</th>
+                            <th>Roll No</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                        <tr>
+                            <td>Siddharth Pandey</td>
+                            <td>S20190010163</td>
+                            <td>siddharth.p19@iiits.in</td>
+                            <td>Full Stack Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Priyam Bajpai</td>
+                            <td>S20190010144</td>
+                            <td>priyam.b19@iiits.in</td>
+                            <td>Full Stack Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Shreyash Mishra</td>
+                            <td>S20190010120</td>
+                            <td>shreyash.m19@iiits.in</td>
+                            <td>Full Stack Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Yaduraj Swapnil Deshmukh</td>
+                            <td>S20190010194</td>
+                            <td>swapnildeshmukh.y19@iiits.in</td>
+                            <td>Full Stack Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Naveen Kumar Vula</td>
+                            <td>S20190010192</td>
+                            <td>naveenkumar.v19@iiits.in</td>
+                            <td>Full Stack Developer</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="button" value="Add New Row" onclick="addRo('empTable')" />
+                <input type="button" value="Remove Last One" onclick="deleterow('empTable')" />
+
+            </div>
+            <br>
+
+            <img src="http://www.iiits.ac.in/iiits-content/uploads/2020/12/Banner-1.png" style="width:920px;height:408px;" usemap="#iiits" alt="Hey there!">
+            <map name="#iiits">
+                    <area shape="rect" coords="1,1,240,340" href="http://www.iiits.ac.in/">
+        
+                    <area shape="rect" coords="300,100,700,340" href="https://siddharth25pandey.github.io/">
+                    <area shape="rect" coords="300,200,800,400" href="https://github.com/siddharth25pandey">
+        
+                </map>
+
+        </center>
+    </body>
+    <script>
+        var name = "Siddharth";
+        alert("Welcome " + name + " to WAD Course");
+        var subj = {
+            sub1: "ML",
+            sub2: "AI",
+            sub3: "WAD",
+            sub4: "TOC",
+            sub5: "CCN",
+            sub6: "CS-4"
+        };
+        document.getElementById("subobj").innerHTML = "The Subjects in the Fourth Semester are Using Obejcts are :" + subj.sub1 + ", " + subj.sub2 + ", " + subj.sub3 + ", " + subj.sub4 + ", " + subj.sub5 + ", " + subj.sub6;
+        var sub_1 = ["ML", "AI", "WAD"];
+        var sub_2 = ["TOC", "CCN", "CS-4"];
+        var merge = sub_1.concat(sub_2);
+        document.getElementById("subarray").innerHTML = "The Subjects in the Fourth Semester are Using Array are :" + merge;
+        var c = 0;
+
+        function addRo(tblId) {
+            var empTab = document.getElementById(tblId);
+            var rowCnt = empTab.rows.length; // GET TABLE ROW COUNT.
+            var tr = empTab.insertRow(rowCnt); // TABLE ROW.
+
+            for (var c = 0; c < 4; c++) {
+                var td = document.createElement('td'); // TABLE DEFINITION.
+                td = tr.insertCell(c);
+                var ele = document.createElement('input');
+
+                td.appendChild(ele);
+            }
+
+        }
+
+
+
+        function deleterow(tblId) {
+            var table = document.getElementById(tblId);
+            var row = table.getElementsByTagName('tr');
+            var rowCountt = table.rows.length;
+
+            if (row.length != '3') {
+
+                table.deleteRow(rowCountt - 1);
+            }
+        }
+    </script>
+
+</html>
